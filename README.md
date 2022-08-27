@@ -9,7 +9,7 @@
  
 `SPF`,`MX` and `DMRAC` records will be created automatically.
 
-Check your cloudflair configuration and get the following values:
+Check your cloudflare configuration and get the following values:
 
 - Domain
 - [Zone Id](https://developers.cloudflare.com/fundamentals/get-started/basic-tasks/find-account-and-zone-ids/)
@@ -22,3 +22,19 @@ Thsi module expects to get four parameters:
 - `domain_verification` (Provided by Proton)
 - `zone_id` (Provided by Cloudflare)
 - `domain` (Provided by Cloudflare)
+
+## Usage
+
+```hcl
+module "protonmail" {
+  source  = "github.com/arcticfox-consulting/terraform-cloudflare-proton/modules/proton@main"
+}
+```
+
+## Requirements
+
+...
+
+## Providers
+
+...
