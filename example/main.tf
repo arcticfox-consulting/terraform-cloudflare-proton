@@ -1,6 +1,5 @@
 module "protonmail" {
-  # source  = "github.com/arcticfox-consulting/terraform-cloudflare-proton/modules/proton@main"
-  source              = "../modules/proton"
+  source              = "github.com/arcticfox-consulting/terraform-cloudflare-proton//modules/proton?ref=main"
   domain              = "example.com"         # Replace with your domain
   zone_id             = "cloudflare_zone_id"  # Replace with your zone id
   domain_key          = "domain_key"          # provided by ProtonMail

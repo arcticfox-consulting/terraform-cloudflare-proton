@@ -27,8 +27,7 @@ This module expects you to provide four parameters:
 
 ```hcl
 module "protonmail" {
-  # source  = "github.com/arcticfox-consulting/terraform-cloudflare-proton/modules/proton@main"
-  source              = "../modules/proton"
+  source              = "github.com/arcticfox-consulting/terraform-cloudflare-proton//modules/proton?ref=main"
   domain              = "example.com"         # Replace with your domain
   zone_id             = "cloudflare_zone_id"  # Replace with your zone id
   domain_key          = "domain_key"          # provided by ProtonMail
@@ -45,10 +44,19 @@ resource "cloudflare_record" "root" {
 }
 ```
 
-## Requirements
-
-...
-
 ## Providers
 
-...
+```hcl
+terraform {
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "cloudflare" {
+  api_token = var.api_token
+}
+```
