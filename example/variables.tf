@@ -1,3 +1,8 @@
 variable "domain" {
-    type = string
+  type = string
+}
+
+variable "api_token" {
+  type      = string
+  sensitive = true
 }
